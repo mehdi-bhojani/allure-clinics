@@ -14,6 +14,9 @@ import DemoProduct from './pages/DemoProduct';
 
 import {useDocTitle} from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
+import Services from './pages/Services';
+import ServicePage from './pages/ServicePage';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   useEffect(() => {
@@ -34,12 +37,15 @@ function App() {
 
   return (
     <>
+      <Toaster />
       <Router>
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-demo" element={<DemoProduct />} /> 
+            <Route path="/services/:category" element={<Services/>} /> {/* Dynamic route for services */}
+            <Route path="/service-detail/:serviceType" element={<ServicePage/>} /> {/* Dynamic route for services */}
           </Routes>
         </ScrollToTop>
       </Router>

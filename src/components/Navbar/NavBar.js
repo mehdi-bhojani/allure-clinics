@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavLinks from '../Navbar/NavLinks';
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -20,11 +21,10 @@ const NavBar = () => {
     }, [top]);
 
     return (
-        <nav className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 ${!top && 'bg-white shadow-lg'}`}>
-            <div className="flex flex-row justify-between items-center py-2">
+        <nav className={`w-full z-30 transition duration-300 ease-in-out bg-white/70 fixed ${!top && ' top-0 shadow-lg bg-white/80'}`}>
+            <div className={`flex flex-row justify-between items-center`} >
                 <div className="flex flex-row justify-center md:px-12 md:mx-12 items-center text-center font-semibold">
-                    <HashLink smooth to="/#hero"><h1 className="font-extrabold text-4xl text-blue-900">mld</h1></HashLink>
-                    
+                    <Link smooth to="/#hero"><img src='/logo.png' alt='logo' className={` ${top ? 'w-[130px] h-[130px]' : 'w-[100px] h-[100px]'}`}></img></Link>                    
                 </div>
                 <div className="group flex flex-col items-center">
                     <button className="p-2 rounded-lg lg:hidden text-blue-900" onClick={handleClick}>
@@ -42,7 +42,7 @@ const NavBar = () => {
                     </div>
 
                     <div className={`fixed transition-transform duration-300 ease-in-out transit flex justify-center left-0 w-full h-auto rounded-md p-24 bg-white lg:hidden shadow-xl top-14 ${  isOpen ? "block" : "hidden" } `}>
-                        <div className='flex flex-col space-y-6'>
+                        <div className='flex flex-col'>
                             <NavLinks />
                         </div>                                                
                     </div>
