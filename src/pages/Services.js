@@ -1,11 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import ServiceCard from "../components/Services/ServiceCard";
 import SkinServices from "../shared/SkinServices.json";
 import NavBar from "../components/Navbar/NavBar";
 
 const Services = () => {
-  const { category } = useParams();
+  // const { category } = useParams();
   // const router = use
   return (
     <>

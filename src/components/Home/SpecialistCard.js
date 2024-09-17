@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Make sure to import Link from your routing library
 import { SocialIcon } from "react-social-icons";
 
 const specialists = [

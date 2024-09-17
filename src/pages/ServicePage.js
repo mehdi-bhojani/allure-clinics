@@ -1,7 +1,7 @@
 import React from 'react';
 import ServiceDetail from '../components/Services/ServiceDetail';
 import NavBar from '../components/Navbar/NavBar';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 
 const ServicePage = () => {
   const serviceData = {
