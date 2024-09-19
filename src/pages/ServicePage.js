@@ -1,17 +1,29 @@
 import React from 'react';
 import ServiceDetail from '../components/Services/ServiceDetail';
 import NavBar from '../components/Navbar/NavBar';
+import { useParams } from 'react-router-dom';
+import theServices from '../shared/SkinServices.json';
 // import Footer from '../components/Footer';
 
 const ServicePage = () => {
-  const serviceData = {
-    title: "Face PRP",
-    price: "PKR 10,000.00",
-    description:
-      "Face PRP, also known as the 'vampire facial,' involves using the patient’s own blood to extract platelet-rich plasma.",
-    imageUrl:
-      "/PHOTO-2024-07-13-11-35-34.jpg", // Replace with actual image URL
-  };
+  const {serviceType} = useParams();
+  console.log(serviceType);
+  function findSubServiceByLink(link) {
+    // Loop through each service
+    for (const service of theServices) {
+      // Loop through each sub-service
+      for (const subService of service.subServices) {
+        if (subService.link.includes(link)) {
+          return subService; // Return the matched sub-service
+        }
+      }
+    }
+    return null; // Return null if no sub-service is found
+  }
+  
+  // Example usage:
+  const serviceData = findSubServiceByLink("root-canal-treatment");
+  console.log(serviceData);
 
   const testimonials = [
     {

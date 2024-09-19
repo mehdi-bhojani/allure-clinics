@@ -33,7 +33,7 @@ function App() {
     });
   }, []);
 
-  useDocTitle("MLD | Molad e Konsult - Bespoke Web and Mobile Applications");
+  useDocTitle("Allure Clinics");
 
   return (
     <>
@@ -49,6 +49,7 @@ function App() {
           </Routes>
         </ScrollToTop>
       </Router>
+      <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     </>
   );
 }

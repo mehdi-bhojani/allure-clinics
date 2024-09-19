@@ -1,69 +1,230 @@
 [
-    {
-      "title": "Face PRP",
-      "description": "Face PRP also known as the 'Vampire Facial', innovating using the... ",
-      "price": "PKR 13,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "Microneedling",
-      "description": "Microneedling at Maxime Clinics is a transformative and minimally invasive...",
-      "price": "PKR 13,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "Face PRP + Microneedling",
-      "description": "Combination of Face PRP and Microneedling...",
-      "price": "PKR 13,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "Hydrafacial",
-      "description": "Hydrafacial at Maxime Clinics is an innovative and invigorating...",
-      "price": "PKR 13,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "BB Glow",
-      "description": "BB Glow is a semi-permanent makeup treatment that involves infusing...",
-      "price": "PKR 15,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "Chemical Peels",
-      "description": "Chemical peels at Maxime Clinics offer a transformative exfoliation...",
-      "price": "PKR 8,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "Glutathione IV",
-      "description": "Glutathione IV treatment at Maxime Clinics regenerates a beautiful...",
-      "price": "PKR 8,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "Advance Hydra-facial",
-      "description": "Advance Hydra-facial is a facial rejuvenating and a skincare...",
-      "price": "PKR 13,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "Guinot Hydra-facial",
-      "description": "A signature facial treatment using Guinot products delivers...",
-      "price": "PKR 18,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "Botox",
-      "description": "Botox injections help reduce the appearance of facial wrinkles...",
-      "price": "PKR 15,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    },
-    {
-      "title": "Filler",
-      "description": "Soft Filler Deep Fillers Basic Fillers...",
-      "price": "PKR 20,000.00",
-      "image": "/PHOTO-2024-07-13-12-49-08.jpg"
-    }
-  ]
-  
+  {
+    "serviceType": "Hair Treatments",
+    "type": "hair-treatments",
+    "link": "/services/hair-treatments",
+    "img": "/Hair.gif",
+    "hero":"/hero/Hair.png",
+    "subServices": [
+      {
+        "title": "Hair Transplant",
+        "description": "A surgical solution for restoring hair in balding or thinning areas.",
+        "img": "/hair-treatment/hair transplant.jpg",
+        "link": "/hair-transplant"
+      },
+      {
+        "title": "Normal Hair PRP",
+        "description": "A treatment using your own platelet-rich plasma to stimulate hair growth.",
+        "img": "/hair-treatment/normal hair prp.jpg",
+        "link": "/normal-hair-prp"
+      },
+      {
+        "title": "Advanced Hair PRP",
+        "description": "An enhanced version of PRP therapy for more effective hair rejuvenation.",
+        "img": "/hair-treatment/advnaced hair prp.jpg",
+        "link": "/advanced-hair-prp"
+      },
+      {
+        "title": "Consultation",
+        "description": "Expert advice and personalized treatment plans for your hair care needs.",
+        "img": "/hair-treatment/consultation.jpg",
+        "link": "/consultation"
+      }
+    ]
+  },
+  {
+    "serviceType": "Facial Treatments",
+    "link": "/services/facial-treatments",
+    "type": "facial-treatments",
+    "img": "/facial.gif",
+    "hero":"/hero/facial.png",
+    "subServices": [
+      {
+        "title": "Face PRP",
+        "description": "A rejuvenating treatment using your own PRP to enhance skin texture and tone.",
+        "img": "/facial/facePRP.jpg",
+        "link": "/face-prp"
+      },
+      {
+        "title": "Microneedling",
+        "description": "A minimally invasive procedure that boosts collagen production for smoother skin.",
+        "img": "/facial/Microneedling.jpg",
+        "link": "/microneedling"
+      },
+      {
+        "title": "Face PRP + Microneedling",
+        "description": "A combination treatment for optimal skin rejuvenation and healing.",
+        "img": "/facial/microneedling+prp.jpg",
+        "link": "/face-prp-microneedling"
+      },
+      {
+        "title": "Hydrafacial",
+        "description": "A deep cleansing and hydrating facial that improves skin health and radiance.",
+        "img": "/facial/Hydra facial.jpg",
+        "link": "/hydrafacial"
+      },
+      {
+        "title": "BB Glow",
+        "description": "A semi-permanent foundation effect for smooth, glowing skin.",
+        "img": "/facial/bbglow.jpg",
+        "link": "/bb-glow"
+      },
+      {
+        "title": "Chemical Peels",
+        "description": "Skin resurfacing treatment to remove dead cells and reveal brighter skin.",
+        "img": "/facial/checmical peel.jpg",
+        "link": "/chemical-peels"
+      },
+      {
+        "title": "Glutathione IV",
+        "description": "An IV therapy to detoxify the body and brighten skin complexion.",
+        "img": "/facial/glutathione IV.jpg",
+        "link": "/glutathione-iv"
+      },
+      {
+        "title": "Advanced Hydra-facial",
+        "description": "An upgraded version of the Hydrafacial for enhanced skin hydration.",
+        "img": "/facial/advanced hydra facial.jpg",
+        "link": "/advanced-hydrafacial"
+      },
+      {
+        "title": "Guinot Hydra-facial",
+        "description": "A premium hydrating facial using Guinot products for radiant skin.",
+        "img": "/facial/guinot hydra facij.jpg",
+        "link": "/guinot-hydrafacial"
+      },
+      {
+        "title": "Botox",
+        "description": "A cosmetic injection to reduce the appearance of fine lines and wrinkles.",
+        "img": "/facial/botox.jpg",
+        "link": "/botox"
+      },
+      {
+        "title": "Filler",
+        "description": "Dermal fillers to restore volume and contour the face.",
+        "img": "/facial/filler.jpg",
+        "link": "/filler"
+      }
+    ]
+  },
+  {
+    "serviceType": "Laser Treatments",
+    "type": "laser-treatments",
+    "link": "/services/laser-treatments",
+    "img": "/Laser treatment.gif",
+    "hero":"/hero/Laser.png",
+    "subServices": [
+      {
+        "title": "Full Face Laser",
+        "description": "Laser treatment to remove unwanted facial hair and improve skin texture.",
+        "img": "/full-face-laser.jpg",
+        "link": "/full-face-laser"
+      },
+      {
+        "title": "Half Face Laser",
+        "description": "Targeted laser hair removal for the upper or lower half of the face.",
+        "img": "/half-face-laser.jpg",
+        "link": "/half-face-laser"
+      },
+      {
+        "title": "Full Arms Laser",
+        "description": "Laser hair removal for the entire arm area.",
+        "img": "/full-arms-laser.jpg",
+        "link": "/full-arms-laser"
+      },
+      {
+        "title": "Half Arms Laser",
+        "description": "Laser treatment for either the upper or lower half of the arms.",
+        "img": "/half-arms-laser.jpg",
+        "link": "/half-arms-laser"
+      },
+      {
+        "title": "Under Arms Laser",
+        "description": "Laser hair removal for smooth, hair-free underarms.",
+        "img": "/under-arms-laser.jpg",
+        "link": "/under-arms-laser"
+      },
+      {
+        "title": "Full Legs Laser",
+        "description": "Comprehensive laser hair removal for the legs.",
+        "img": "/full-legs-laser.jpg",
+        "link": "/full-legs-laser"
+      },
+      {
+        "title": "Half Legs Laser",
+        "description": "Laser treatment for either the upper or lower half of the legs.",
+        "img": "/half-legs-laser.jpg",
+        "link": "/half-legs-laser"
+      },
+      {
+        "title": "Bikini Line Laser",
+        "description": "Laser hair removal for the bikini area for a clean, smooth finish.",
+        "img": "/bikini-line-laser.jpg",
+        "link": "/bikini-line-laser"
+      },
+      {
+        "title": "Full Body Laser",
+        "description": "Complete laser hair removal for smooth, hair-free skin from head to toe.",
+        "img": "/full-body-laser.jpg",
+        "link": "/full-body-laser"
+      }
+    ]
+  },
+  {
+    "serviceType": "Dental Treatments",
+    "type": "dental-treatments",
+    "link": "/services/dental-treatments",
+    "img": "/dental.gif",
+    "hero":"/hero/Dental.png",
+    "subServices": [
+      {
+        "title": "Scaling & Polishing",
+        "description": "A professional cleaning to remove plaque and tartar for healthier teeth and gums.",
+        "img": "/dental/scaling and polishing.jpg",
+        "link": "/scaling-polishing"
+      },
+      {
+        "title": "Teeth Whitening",
+        "description": "A cosmetic procedure to brighten and whiten teeth for a more radiant smile.",
+        "img": "/dental/teeth whiteinig.jpg",
+        "link": "/teeth-whitening"
+      },
+      {
+        "title": "Root Canal Treatment",
+        "description": "A procedure to treat and save an infected or damaged tooth.",
+        "img": "/dental/root canal.jpg",
+        "link": "/root-canal-treatment"
+      },
+      {
+        "title": "Tooth Extraction",
+        "description": "Removal of a problematic or damaged tooth to relieve pain and prevent infection.",
+        "img": "/dental/tooth extraction.jpg",
+        "link": "/tooth-extraction"
+      },
+      {
+        "title": "Composite Filling",
+        "description": "A tooth-colored filling used to repair cavities and restore the tooth’s appearance.",
+        "img": "/dental/filling.jpg",
+        "link": "/composite-filling"
+      },
+      {
+        "title": "Aligners",
+        "description": "Clear aligners that gradually straighten teeth without the need for metal braces.",
+        "img": "/dental/alligners.jpg",
+        "link": "/aligners"
+      },
+      {
+        "title": "Braces",
+        "description": "Orthodontic treatment using brackets and wires to straighten and align teeth.",
+        "img": "/dental/braces.jpg",
+        "link": "/braces"
+      },
+      {
+        "title": "Removable Orthodontic Appliance",
+        "description": "Custom appliances used to correct minor dental misalignments.",
+        "img": "/dental/removable orthimdic.jpg",
+        "link": "/removable-orthodontic-appliance"
+      }
+    ]
+  }
+]

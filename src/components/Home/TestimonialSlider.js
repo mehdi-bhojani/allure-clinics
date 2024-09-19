@@ -8,7 +8,7 @@ const testimonialsData = [
     id: 1,
     name: "William Smith",
     quote:
-      "I've also tried their HydraFacial and it was incredible. My skin felt so cleansed and rejuvenated afterwards. I left the spa glowing and with an increased sense of confidence.I've also tried their HydraFacial and it was incredible. My skin felt so cleansed and rejuvenated afterwards. I left the spa glowing and with an increased sense of confidence.",
+      "I've also tried their HydraFacial and it was incredible. My skin felt so cleansed and rejuvenated afterwards. ",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const testimonialsData = [
 
 const Testimonials = () => {
   return (
-    <div className="py-12 relative">
+    <div className="py-12 relative testimonial" id={'testimonials'}>
       <h2 className="text-primary text-4xl text-center mb-8">Testimonials</h2>
       <div
         className="px-6 min-h-[300px] flex flex-col pt-5 items-center "
@@ -55,16 +55,16 @@ const Testimonials = () => {
           showStatus={false}
           showArrows={false}
           showIndicators={false}
-          autoPlay={true}
+          // autoPlay={true}
           infiniteLoop={true}
           interval={5000}
         >
           {testimonialsData.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="flex flex-col items-center justify-center text-center"
+              className="flex flex-col items-center justify-center text-center w-full"
             >
-              <p className="text-xl max-w-2xl text-white font-medium mb-1">
+              <p className="text-xl text-white font-medium mb-1">
                 "{testimonial.quote}"
               </p>
               <h3 className="text-white text-sm font-light">

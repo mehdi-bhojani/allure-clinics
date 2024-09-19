@@ -1,57 +1,138 @@
-import React, { useState, useEffect } from 'react';
-import NavLinks from '../Navbar/NavLinks';
-import { Link } from 'react-router-dom';
-
+import { ChevronDown } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import skinServices from "../../shared/SkinServices.json";
 
 const NavBar = () => {
-    const [top, setTop] = useState(!window.scrollY);
-    const [isOpen, setisOpen] = React.useState(false);
-    function handleClick() {
-        setisOpen(!isOpen);
-    }
+  const [top, setTop] = useState(!window.scrollY);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Track dropdown state
 
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
 
-    useEffect(() => {
-      const scrollHandler = () => {
-        window.pageYOffset > 10 ? setTop(false) : setTop(true)
-      };
-      window.addEventListener('scroll', scrollHandler);
-      return () => window.removeEventListener('scroll', scrollHandler);
-    }, [top]);
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown visibility
+  };
 
-    return (
-        <nav className={`w-full z-30 transition duration-300 ease-in-out bg-white/70 fixed ${!top && ' top-0 shadow-lg bg-white/80'}`}>
-            <div className={`flex flex-row justify-between items-center`} >
-                <div className="flex flex-row justify-center md:px-12 md:mx-12 items-center text-center font-semibold">
-                    <Link smooth to="/#hero"><img src='/logo.png' alt='logo' className={` ${top ? 'w-[130px] h-[130px]' : 'w-[100px] h-[100px]'}`}></img></Link>                    
+  useEffect(() => {
+    const scrollHandler = () => {
+      window.pageYOffset > 10 ? setTop(false) : setTop(true);
+    };
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [top]);
+
+  return (
+    <nav className={`bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 z-10 ${!top && 'fixed w-full bg-white/60'}`}>
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <img
+            src="/logo.png"
+            className="h-24"
+            alt=" Logo"
+          />
+        </Link>
+        <button
+          onClick={handleClick}
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-dropdown"
+          aria-expanded={isOpen}
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div className={`${isOpen ? "block" : "hidden"} w-full md:block  md:w-auto`} id="navbar-dropdown">
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 md:items-center">
+            <li>
+              <Link
+                to="/"
+                className="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-primary md:p-0 md:dark:text-blue-500 dark:bg-primary md:dark:bg-transparent"
+                aria-current="page"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={toggleDropdown}
+                className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+              >
+                Services
+                <ChevronDown className="w-4 h-4" />
+              </button>
+
+              {/* Dropdown */}
+              {isDropdownOpen && (
+                <div className="z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 md:absolute">
+                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                    {skinServices.map((service, index) => (
+                    <li key={index}>
+                      <Link
+                        to={service.link}
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        {service.serviceType}
+                      </Link>
+                    </li>
+                    
+                    ))}
+                  </ul>
                 </div>
-                <div className="group flex flex-col items-center">
-                    <button className="p-2 rounded-lg lg:hidden text-blue-900" onClick={handleClick}>
-                        <svg className="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            {isOpen && (
-                            <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
-                            )}
-                            {!isOpen && (
-                            <path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
-                            )}
-                        </svg>
-                    </button>
-                    <div className='hidden space-x-6 lg:inline-block p-5'>
-                        <NavLinks />
-                    </div>
-
-                    <div className={`fixed transition-transform duration-300 ease-in-out transit flex justify-center left-0 w-full h-auto rounded-md p-24 bg-white lg:hidden shadow-xl top-14 ${  isOpen ? "block" : "hidden" } `}>
-                        <div className='flex flex-col'>
-                            <NavLinks />
-                        </div>                                                
-                    </div>
-
-                </div>
-            </div>
-        </nav>
-    )
-    
-}
-
+              )}
+            </li>
+            <li>
+              <Link
+                to="/#about"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/#faq"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                FAQ
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/#contact"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/#book"
+                className="block py-2 px-3 md:px-5 md:py-2 text-gray-900  md:bg-primary rounded-full hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                Book Now
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 export default NavBar;

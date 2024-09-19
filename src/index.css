@@ -26,3 +26,19 @@ body {
   background-position: top;
   background-size: cover;
 }
+
+.carousel .slide .specialists-img img{
+  width: 150px;
+  height: 150px;
+}
+
+.specialists .carousel .slide{
+  display: flex;
+    align-items: center;
+}
+
+.testimonial .carousel-root{
+  width: 100%;
+}
+
+/*  */

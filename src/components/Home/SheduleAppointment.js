@@ -29,16 +29,16 @@ const SheduleAppointment = () => {
   };
 
   return (
-    <div className="p-24 z-10">
+    <div className="p-5 md:p-24 z-10" id="book">
       <div className=" w-full">
-        <h2 className="text-4xl text-primary mb-8 text-left">
+        <h2 className="text-4xl text-primary mb-8 text-center md:text-left">
           Schedule an Appointment
         </h2>
         <div className="flex max-h-[500px] justify-between gap-5 items-stretch h-full">
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="h-auto w-1/2 flex flex-col justify-between"
+            className="h-auto w-full md:w-1/2 flex flex-col justify-between"
           >
             {/* Use a flex container with 'space-y-4' for consistent spacing */}
             <div className="flex flex-1 flex-col justify-between h-full space-y-4">
@@ -96,7 +96,7 @@ const SheduleAppointment = () => {
               </div>
             </div>
           </form>
-          <div className="w-1/2 flex-1 max-h-[500px] overflow-hidden">
+          <div className="w-1/2 flex-1 max-h-[500px] overflow-hidden hidden md:block">
             <img
               src="/appointment.png"
               alt="appointment"

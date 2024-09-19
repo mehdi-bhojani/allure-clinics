@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function HorizontalCard(props) {
   return (
     <div>
-      <div className="max-w-sm bg-[#AE9D95] rounded-xl shadow opacity-58">
+      <div className="max-w-sm bg-[#AE9D95] rounded-lg shadow-lg w-full md:w-72 bg-opacity-[58%] md:mx-4 md:h-[100%]">
         <Link to={props.link}>
           <img className="rounded-t-lg h-[300px] object-cover" src={props.img} alt={props.title} />
         </Link>

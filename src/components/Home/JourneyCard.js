@@ -2,7 +2,7 @@ import React from 'react';
 
 function JourneyCard(props) {
   return (
-    <div className="relative w-full mx-auto max-w-6xl rounded-xl overflow-hidden shadow-lg">
+    <div className="relative w-full mx-auto max-w-6xl rounded-xl overflow-hidden shadow-lg" id={props.title==="Our Journey"?"About":"contact"}>
       {/* Background Image */}
       <div
         className="absolute w-full h-full inset-0 bg-cover bg-center"
@@ -15,15 +15,16 @@ function JourneyCard(props) {
       </div>
 
       {/* Content */}
-      <div className="relative p-12 min-h-[350px] flex flex-col gap-5">
-        <h2 className="text-6xl font-bold text-primary">{props.title}</h2>
+      <div className="relative p-5 md:p-12 md:min-h-[350px] flex flex-col gap-5">
+        <h2 className="text-3xl text-center md:text-left md:text-6xl font-bold text-primary">{props.title}</h2>
         <div>
-        <p className="mt-4 text-white w-1/2 float-right">
+        <div className='text-center md:text-left' >
         {props.description}
-       </p>
+        </div>
+       </div>
         </div>
       </div>
-    </div>
+    
   );
 }
 

@@ -1,51 +1,127 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 import HorizontalCard from "./HorizontalCard";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function WhatWeOffer() {
+  const [slidePercentage, setSlidePercentage] = useState(33.33); // Default for desktop
+
   const dummyData = [
     {
-      link: "/services/skin",
-      img: "/PHOTO-2024-07-13-12-49-36.jpg",
-      title: "Skin Care",
+      link: "/services/hair-treatments",
+      img: "/Hair.gif",
+      title: "Hair Treatments",
       description: "",
     },
     {
-      link: "/services/skin",
-      img: "/PHOTO-2024-07-13-11-35-34.jpg",
-      title: "Dental",
+      link: "/services/facial-treatments",
+      img: "/facial.gif",
+      title: "Facial Treatments",
       description: "",
     },
     {
-      link: "/services/skin",
-      img: "/PHOTO-2024-07-15-15-49-27.jpg",
-      title: "Laser",
+      link: "/services/laser-treatments",
+      img: "/Laser treatment.gif",
+      title: "Laser Treatments",
       description: "",
     },
+    {
+      link: "/services/dental-treatments",
+      img: "/dental.gif",
+      title: "Dental Treatment",
+      description: "",
+    },
+    // Add more services if needed
   ];
+
+  // Adjust slide width based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSlidePercentage(100); // Mobile: full width
+      } else if(window.innerWidth < 1024){
+        setSlidePercentage(50); // Tablet: 1/2 of the width
+      } 
+       else {
+        setSlidePercentage(33.33); // Desktop: 1/3 of the width
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="relative px-12 pt-12 pb-24"
+    <div
+      className="relative p-5 md:px-12 pt-12 pb-24 specialists"
+      id="services"
       style={{
         backgroundImage: `url('/Vector 8.png')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "0px -90px",
+        backgroundPosition: "0px -110px",
       }}
     >
-      <div className="">
-      <h1 className="text-4xl text-center text-primary uppercase">
-        What We Offer
-      </h1>
-      <div className="flex justify-between gap-5 my-5">
-        {dummyData.map((data, index) => (
-          <HorizontalCard
-            key={index}
-            link={data.link}
-            img={data.img}
-            title={data.title}
-            description={data.description}
-          />
-        ))}
-      </div>
+      <h1 className="text-4xl text-center text-primary mb-8">What We Offer</h1>
+      <div className="max-w-5xl mx-auto">
+        <Carousel
+          showArrows={true}
+          infiniteLoop={true}
+          centerMode={true}
+          centerSlidePercentage={slidePercentage} // Dynamic percentage based on screen size
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={false}
+          swipeable={true}
+          emulateTouch={true}
+          renderArrowPrev={(onClickHandler, hasPrev, label) =>
+            hasPrev && (
+              <button
+                type="button"
+                onClick={onClickHandler}
+                title={label}
+                aria-label="Previous slide"
+                style={{ left: 15 }}
+                className="absolute top-[50%] left-0 z-10 p-2 bg-[#E3B25A] rounded-full hover:bg-[#c89f45] focus:outline-none"
+              >
+                <ChevronLeft className="text-white text-xl" />
+              </button>
+            )
+          }
+          renderArrowNext={(onClickHandler, hasNext, label) =>
+            hasNext && (
+              <button
+                type="button"
+                onClick={onClickHandler}
+                title={label}
+                aria-label="Next slide"
+                style={{ right: 15 }}
+                className="absolute top-[50%] right-0 z-10 p-2 bg-[#E3B25A] rounded-full hover:bg-[#c89f45] focus:outline-none"
+              >
+                <ChevronRight className="text-white text-xl" />
+              </button>
+            )
+          }
+        >
+          {dummyData.map((data, index) => (
+            <HorizontalCard
+              key={index}
+              link={data.link}
+              img={data.img}
+              title={data.title}
+              description={data.description}
+            />
+          ))}
+        </Carousel>
       </div>
     </div>
   );

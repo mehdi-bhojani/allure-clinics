@@ -8,44 +8,44 @@ const Footer = () => {
     <>
       <footer>
         <div className="footer pt-24 max-w-full bg-gray-100 py-30">
-          <div>
-            <h1 className="text-5xl lg:ml-11 text-white px-12 pt-12 max-w-[850px] leading-relaxed">
+          <div className="">
+            <h1 className="text-2xl md:text-5xl lg:ml-11 text-white px-12 pt-12 max-w-[850px] leading-relaxed">
               Ready for a transformative self-care experience?
             </h1>
           </div>
           {/* Top area: Blocks */}
-          <div className="grid sm:grid-cols-12 gap-5 cta min-h-[350px] -mt-10">
+          <div className="flex p-5 pt-20 md:pt-40 md:mx-auto flex-col md:grid md:grid-cols-12 md:gap-5 cta min-h-[350px] lg:-mt-10">
             {/* 1st block */}
-            <div className="flex items-end col-span-6 md:col-span-6 lg:col-span-3 ml-7 mx-auto uppercase font-light  py-8 md:py-12  p-12">
+            <div className="flex md:items-end col-span-12 md:col-span-4 lg:col-span-3 md:ml-7 md:mx-auto uppercase font-light  md:p-5 lg:p-12">
               <ul className="text-md">
                 <li className="mb-2">
                   <HashLink
-                    to="#"
-                    className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    to="/"
+                    className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Home
                   </HashLink>
                 </li>
                 <li className="mb-2">
                   <HashLink
-                    to="#"
-                    className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    to="/#About"
+                    className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     About Us
                   </HashLink>
                 </li>
                 <li className="mb-2">
                   <HashLink
-                    to="#"
-                    className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    to="/#services"
+                    className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Services
                   </HashLink>
                 </li>
                 <li className="mb-2">
                   <HashLink
-                    to="#"
-                    className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    to="/#specialists"
+                    className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Specialists
                   </HashLink>
@@ -53,36 +53,36 @@ const Footer = () => {
               </ul>
             </div>
             {/* 2nd block */}
-            <div className="flex items-end col-span-6 md:col-span-6 lg:col-span-3 ml-7 mx-auto uppercase font-light  py-8 md:py-12  p-12">
+            <div className="flex md:items-end col-span-12 md:col-span-4 lg:col-span-3 md:ml-7 md:mx-auto uppercase font-light md:p-5 lg:p-12">
               <ul className="text-md">
                 <li className="mb-2">
                   <HashLink
-                    to="#"
-                    className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    to="/#testimonials"
+                    className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Testimonials
                   </HashLink>
                 </li>
                 <li className="mb-2">
                   <HashLink
-                    to="#"
-                    className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    to="/#book"
+                    className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Appointment
                   </HashLink>
                 </li>
                 <li className="mb-2">
                   <HashLink
-                    to="#"
-                    className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    to="/#contact"
+                    className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Contacts
                   </HashLink>
                 </li>
-                <li className="mb-2">
+                <li className="mb-2 hidden md:block">
                   <HashLink
                     to="#"
-                    className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     <br />
                   </HashLink>
@@ -91,7 +91,7 @@ const Footer = () => {
             </div>
 
             {/* 3rd block */}
-            <div className="col-span-6 md:col-span-6 lg:col-span-3 mx-auto py-8 md:py-12 p-12 flex flex-col justify-end">
+            <div className="col-span-12 md:col-span-4 lg:col-span-3 md:mx-automd:p-5 lg:p-12 flex flex-col md:justify-end justify-start">
               <h6 className="text-white font-light mb-4 uppercase">Social</h6>
               <ul className="text-xs flex gap-5">
                 <li className="mb-2">
@@ -113,13 +113,13 @@ const Footer = () => {
             </div>
 
             {/* 4th block */}
-            <div className="col-span-12 text-center mx-auto lg:col-span-3">
+            <div className="hidden md:block col-span-12 text-center mx-auto lg:col-span-3">
               <div>
                 <Link to={"/"}>
                   <img
                     src="/logo.png"
                     alt="logo"
-                    className="h-[350px] mx-auto"
+                    className="md:h-[100px] lg:h-[350px] mx-auto"
                   />
                 </Link>
               </div>
@@ -127,21 +127,21 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-wrap items-center md:justify-between justify-center mx-auto px-4 bg-black">
-            <div className="w-full px-8 mx-auto text-center py-2 flex justify-between">
+            <div className="w-full px-8 mx-auto text-center py-2 flex flex-col md:flex-row justify-between">
             <div className="flex justify-start gap-5">
             <div>
-              <HashLink to="#" className="text-white uppercase font-light text-sm">
+              <HashLink to="#" className="text-white uppercase font-light text-[11px] md:text-sm">
                 Privacy Policy
               </HashLink>
             </div>
             <div>
-              <HashLink to="#" className="text-white uppercase font-light text-sm">
+              <HashLink to="#" className="text-white uppercase font-light text-[11px] md:text-sm">
                 Terms & Condition
               </HashLink>
             </div>
             </div>
             <div>
-              <HashLink to="#" className="text-white uppercase font-light text-sm">
+              <HashLink to="#" className="text-white uppercase font-light text-xs md:text-sm">
               &copy; Copyright Allure clinic
               </HashLink>
             </div>
