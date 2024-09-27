@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import skinServices from "../../shared/SkinServices.json";
 
 const NavBar = () => {
@@ -79,13 +80,13 @@ const NavBar = () => {
 
               {/* Dropdown */}
               {isDropdownOpen && (
-                <div className="z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 md:absolute">
+                <div className="z-10 font-normal w-full bg-white divide-y divide-gray-100 rounded-lg md:shadow md:w-44 dark:bg-gray-700 dark:divide-gray-600 md:absolute">
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                     {skinServices.map((service, index) => (
                     <li key={index}>
                       <Link
                         to={service.link}
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold"
                       >
                         {service.serviceType}
                       </Link>
@@ -97,36 +98,40 @@ const NavBar = () => {
               )}
             </li>
             <li>
-              <Link
-                to="/#about"
+              <HashLink 
+              smooth to="/#about"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 About
-              </Link>
+              </HashLink>
             </li>
             <li>
-              <Link
+              <HashLink
+                smooth
                 to="/#faq"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 FAQ
-              </Link>
+              </HashLink>
             </li>
             <li>
-              <Link
-                to="/#contact"
+              <a
+                href="http://wa.link/1jueny"
+                target="_blank"
+                rel="noreferrer"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
-                Contact
-              </Link>
+                Consult
+              </a>
             </li>
             <li>
-              <Link
+              <HashLink
+                smooth
                 to="/#book"
-                className="block py-2 px-3 md:px-5 md:py-2 text-gray-900  md:bg-primary rounded-full hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 px-3 md:px-5 md:py-2 text-gray-900  md:bg-primary rounded-full hover:bg-gray-100 md:hover:bg-primary md:border-0"
               >
                 Book Now
-              </Link>
+              </HashLink>
             </li>
           </ul>
         </div>

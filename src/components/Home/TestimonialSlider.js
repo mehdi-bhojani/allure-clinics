@@ -6,28 +6,28 @@ import { Carousel } from "react-responsive-carousel";
 const testimonialsData = [
   {
     id: 1,
-    name: "William Smith",
+    name: "Emaan Zehra",
     quote:
       "I've also tried their HydraFacial and it was incredible. My skin felt so cleansed and rejuvenated afterwards. ",
   },
   {
     id: 2,
-    name: "Jane Doe",
+    name: "Abeer Gouhar",
     quote:
       "Absolutely wonderful experience. The staff was so professional and friendly, and the services are top-notch!",
   },
   {
     id: 3,
-    name: "John Carter",
+    name: "Hira Tunio",
     quote:
       "A perfect place to relax and get pampered. The facial treatment was soothing, and the ambiance was excellent.",
   },
   {
     id: 4,
-    name: "Sarah Johnson",
+    name: "Atiya Jhokiyo",
     quote:
       "Amazing service! My skin has never felt better, and the team was so friendly. Will definitely return!",
-  },
+  },
 ];
 
 const Testimonials = () => {
@@ -55,7 +55,7 @@ const Testimonials = () => {
           showStatus={false}
           showArrows={false}
           showIndicators={false}
-          // autoPlay={true}
+          autoPlay={true}
           infiniteLoop={true}
           interval={5000}
         >

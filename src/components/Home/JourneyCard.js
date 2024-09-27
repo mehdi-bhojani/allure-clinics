@@ -8,6 +8,7 @@ function JourneyCard(props) {
         className="absolute w-full h-full inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${props.img})`, // Correct path without /public
+          backgroundPosition: "top",
         }}
       >
         {/* Gradient Overlay */}

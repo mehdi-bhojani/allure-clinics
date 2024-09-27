@@ -31,7 +31,7 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className='p-5 md:p-12 my-10'>
+    <div className='p-5 md:p-12 my-10' id='faq'>
     <h1 className="text-3xl text-primary text-center dark:text-gray-400">Frequently Asked Questions</h1>
     <div className='p-5 md:p-12 my-10 bg-black/50'>
     <div id="accordion-collapse" data-accordion="collapse">

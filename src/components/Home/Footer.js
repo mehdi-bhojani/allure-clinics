@@ -57,6 +57,7 @@ const Footer = () => {
               <ul className="text-md">
                 <li className="mb-2">
                   <HashLink
+                    smooth
                     to="/#testimonials"
                     className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
@@ -65,6 +66,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <HashLink
+                    smooth
                     to="/#book"
                     className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
@@ -73,6 +75,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <HashLink
+                    smooth
                     to="/#contact"
                     className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >
@@ -81,6 +84,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2 hidden md:block">
                   <HashLink
+                    smooth
                     to="#"
                     className="text-white hover:text-primary hover:tracking-wider transition duration-250 ease-in-out"
                   >

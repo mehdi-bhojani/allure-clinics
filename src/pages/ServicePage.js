@@ -7,7 +7,7 @@ import theServices from '../shared/SkinServices.json';
 
 const ServicePage = () => {
   const {serviceType} = useParams();
-  console.log(serviceType);
+  // console.log(serviceType);
   function findSubServiceByLink(link) {
     // Loop through each service
     for (const service of theServices) {
@@ -22,7 +22,7 @@ const ServicePage = () => {
   }
   
   // Example usage:
-  const serviceData = findSubServiceByLink("root-canal-treatment");
+  const serviceData = findSubServiceByLink(serviceType);
   console.log(serviceData);
 
   const testimonials = [

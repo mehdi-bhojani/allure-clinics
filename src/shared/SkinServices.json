@@ -4,7 +4,7 @@
     "type": "hair-treatments",
     "link": "/services/hair-treatments",
     "img": "/Hair.gif",
-    "hero":"/hero/Hair.png",
+    "hero": "/hero/hair head.png",
     "subServices": [
       {
         "title": "Hair Transplant",
@@ -25,19 +25,19 @@
         "link": "/advanced-hair-prp"
       },
       {
-        "title": "Consultation",
+        "title": "Hair Ecomp",
         "description": "Expert advice and personalized treatment plans for your hair care needs.",
         "img": "/hair-treatment/consultation.jpg",
-        "link": "/consultation"
+        "link": "/hair-ecomp"
       }
     ]
   },
   {
-    "serviceType": "Facial Treatments",
-    "link": "/services/facial-treatments",
-    "type": "facial-treatments",
+    "serviceType": "Skin Treatments",
+    "link": "/services/skin-treatments",
+    "type": "skin-treatments",
     "img": "/facial.gif",
-    "hero":"/hero/facial.png",
+    "hero": "/hero/skin head.png",
     "subServices": [
       {
         "title": "Face PRP",
@@ -112,60 +112,60 @@
     "type": "laser-treatments",
     "link": "/services/laser-treatments",
     "img": "/Laser treatment.gif",
-    "hero":"/hero/Laser.png",
+    "hero": "/hero/laser head.png",
     "subServices": [
       {
         "title": "Full Face Laser",
         "description": "Laser treatment to remove unwanted facial hair and improve skin texture.",
-        "img": "/full-face-laser.jpg",
+        "img": "/laser treatment/full face laser.jpg",
         "link": "/full-face-laser"
       },
       {
         "title": "Half Face Laser",
         "description": "Targeted laser hair removal for the upper or lower half of the face.",
-        "img": "/half-face-laser.jpg",
+        "img": "/laser treatment/half face laser.jpg",
         "link": "/half-face-laser"
       },
       {
         "title": "Full Arms Laser",
         "description": "Laser hair removal for the entire arm area.",
-        "img": "/full-arms-laser.jpg",
+        "img": "/laser treatment/full arm laser.jpg",
         "link": "/full-arms-laser"
       },
       {
         "title": "Half Arms Laser",
         "description": "Laser treatment for either the upper or lower half of the arms.",
-        "img": "/half-arms-laser.jpg",
+        "img": "/laser treatment/hald arm laser.jpg",
         "link": "/half-arms-laser"
       },
       {
         "title": "Under Arms Laser",
         "description": "Laser hair removal for smooth, hair-free underarms.",
-        "img": "/under-arms-laser.jpg",
+        "img": "/laser treatment/under arm laser.jpg",
         "link": "/under-arms-laser"
       },
       {
         "title": "Full Legs Laser",
         "description": "Comprehensive laser hair removal for the legs.",
-        "img": "/full-legs-laser.jpg",
+        "img": "/laser treatment/full leg laser.jpg",
         "link": "/full-legs-laser"
       },
       {
         "title": "Half Legs Laser",
         "description": "Laser treatment for either the upper or lower half of the legs.",
-        "img": "/half-legs-laser.jpg",
+        "img": "/laser treatment/half leg laser.jpg",
         "link": "/half-legs-laser"
       },
       {
         "title": "Bikini Line Laser",
         "description": "Laser hair removal for the bikini area for a clean, smooth finish.",
-        "img": "/bikini-line-laser.jpg",
+        "img": "/laser treatment/bikini laser.jpg",
         "link": "/bikini-line-laser"
       },
       {
         "title": "Full Body Laser",
         "description": "Complete laser hair removal for smooth, hair-free skin from head to toe.",
-        "img": "/full-body-laser.jpg",
+        "img": "/laser treatment/full body laser.jpg",
         "link": "/full-body-laser"
       }
     ]
@@ -175,7 +175,7 @@
     "type": "dental-treatments",
     "link": "/services/dental-treatments",
     "img": "/dental.gif",
-    "hero":"/hero/Dental.png",
+    "hero": "/hero/dental head.png",
     "subServices": [
       {
         "title": "Scaling & Polishing",

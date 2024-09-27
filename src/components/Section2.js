@@ -13,11 +13,11 @@ function Section2() {
   const cardsData = [
     {
       id: 1,
-      img: "/portrait-youth-with-freckles-beauty-marks_23-2151703773.png",
+      img: "/Journey.jpeg",
       title: "Our Journey",
-      getId:'About',
+      getId: "About",
       description: (
-        <p className="text-white md:mb-6 md:leading-loose" >
+        <p className="text-white md:mb-6 md:leading-loose">
           At Allure Clinic, we pride ourselves on delivering exceptional beauty
           and wellness services. Our team of highly skilled and experienced
           doctors is dedicated to helping you look and feel your best. With
@@ -29,9 +29,9 @@ function Section2() {
     },
     {
       id: 2,
-      img: "/standing-top-mountain-peak-success-achieved-generated-by-ai_188544-33348.png",
+      img: "/Goal.jpeg",
       title: "Our Goals",
-      getId:'',
+      getId: "",
       description: (
         <p className="text-white md:mb-6 md:leading-loose">
           At Allure Clinic, we have one clear goal that guides everything we do:
@@ -51,18 +51,31 @@ function Section2() {
       id: 3,
       img: "/contact.jpg",
       title: "Contact Us",
-      getId:'contact',
+      getId: "contact",
       description: (
         <>
-          <p className="text-white md:mb-6 md:leading-loose flex flex-col gap-2" id='contact'>
+          <div
+            className="text-white md:mb-6 md:leading-loose flex flex-col gap-2"
+            id="contact"
+          >
             <span className="flex gap-1 items-center">
               {" "}
               <MapPin />{" "}
               <h3 className="uppercase font-bold md:text-xl">Address :</h3>
             </span>{" "}
+            <div>
+              <iframe
+                className="md:min-h-[300px]"
+                title="Allure Clinics Location"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20393.028519554056!2d67.068159!3d24.7929359!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd32f01550903e53%3A0x7d6fc369002fc9ab!2sAllure%20Clinics!5e1!3m2!1sen!2s!4v1727430759907!5m2!1sen!2s"
+                style={{ border: 0, width: "-webkit-fill-available" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
             1st Floor, Ittehad Tower 1-C, Main Khayaban-e-Ittehad road, Corner
             of Bukhari Commercial Lane 05, DHA Phase 6 Karachi.
-          </p>
+          </div>
           <span className="mt-8 flex gap-1 items-center text-white">
             {" "}
             <Share2 />
@@ -72,7 +85,8 @@ function Section2() {
             <ul className="text-xs flex gap-5">
               <li className="mb-2">
                 <SocialIcon
-                  url="https://facebook.com/"
+                  url="https://www.facebook.com/theallureclinics"
+                  target="_blank"
                   bgColor={"transparent"}
                   className=" border border-primary bg-primary hover:opacity-70  hover:text-white rounded-lg p-0 "
                 />
@@ -80,6 +94,7 @@ function Section2() {
               <li className="mb-2">
                 <SocialIcon
                   url="https://www.instagram.com/allureclinics_?igsh=bG1lbjQ0cDVudHVj"
+                  target="_blank"
                   bgColor={"transparent"}
                   className=" border border-primary bg-primary hover:opacity-70  hover:text-white rounded-lg p-0 "
                 />
@@ -101,7 +116,10 @@ function Section2() {
         backgroundPosition: "center",
       }}
     >
-      <div className="flex flex-col pt-12 gap-6 p-5 md:pt-24 md:gap-12 md:p-12">
+      <div
+        className="flex flex-col pt-12 gap-6 p-5 md:pt-24 md:gap-12 md:p-12"
+        id="about"
+      >
         {cardsData.map((item) => {
           return (
             <JourneyCard
@@ -117,7 +135,7 @@ function Section2() {
         <WhatWeOffer />
       </div>
       <div>
-        <SheduleAppointment  />
+        <SheduleAppointment />
       </div>
       <div>
         <SpecialistCard />

@@ -17,12 +17,12 @@ const SheduleAppointment = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          // console.log(result.text);
           toast.success("Request sent successfully!");
           form.current.reset();
         },
         (error) => {
-          console.log(error.text);
+          // console.log(error.text);
           toast.error("Failed to send request");
         }
       );

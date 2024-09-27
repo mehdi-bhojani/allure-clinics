@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carous
 import Testimonials from "../Home/TestimonialSlider";
 import Footer from "../Home/Footer";
 import { Link } from "react-router-dom";
+// import SkinService from '../../shared/SkinServices.json'
 
 const ServiceDetail = ({ service, testimonials }) => {
   return (
@@ -26,11 +27,13 @@ const ServiceDetail = ({ service, testimonials }) => {
         <div className="space-y-1 p-5 flex flex-col gap-4 items-center justify-center md:items-start">
           <h1 className="text-4xl font-bold">{service.title}</h1>
           <p className="text-gray-700 break-words">{service.description}</p>
-          <Link to={'/#book'} className="text-white my-5">
-          <button className="bg-primary p-3 rounded-xl">Book an Appointment Now</button>
+          <Link to={"/#book"} className="text-white my-5">
+            <button className="bg-primary p-3 rounded-xl">
+              Book an Appointment Now
+            </button>
           </Link>
-          </div>
-          </div>
+        </div>
+      </div>
 
       {/* Testimonials Section with Carousel */}
       <Testimonials />

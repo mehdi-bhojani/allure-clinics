@@ -19,12 +19,12 @@ const VideoFrame = ({ url }) => {
       <div className="video-frame">
         {loading && (
           <div className="spinner-error-container">
-            <div className="spinner" />
+            <img src="/logo.svg" alt="Banner"  />
           </div>
         )}
         {error && (
           <div className="spinner-error-container">
-            <p className="error-message">Error: {error}</p>
+          <p className="error-message">Error: {error}</p>
           </div>
         )}
         <ReactPlayer

@@ -8,14 +8,14 @@ const specialists = [
   {
     image: "/specialist1.jpg", // Replace with the actual image URL
     names: "Dr Azam Virk",
-    specialization: "Aesthetic & Dermatology Consultant",
+    specialization: "Aesthetic & Skin Consultant",
     qualifications: [
       "MBBS (DUHS), MSPH (JSMU)",
       "Professional Diploma in Facial Aesthetic & Medicine from Canadian Academy of Aesthetic Medicine",
     ],
     socialProfiles: [
-      { platform: "facebook", link: "https://facebook.com/example" }, // Update with actual links
-      { platform: "instagram", link: "https://instagram.com/example" },
+      { platform: "facebook", link: "https://www.facebook.com/Dr.AzamVirk?mibextid=kFxxJD" }, // Update with actual links
+      { platform: "instagram", link: "https://www.instagram.com/dr.azam_virk?igsh=MWgxaHZodTZmdGx4Mg==" },
     ],
   },
   {
@@ -26,8 +26,8 @@ const specialists = [
       "BDS (DUHS), Certified Facial Aesthetics CPD (UK), Professional Diploma in Facial Aesthetics AACME",
     ],
     socialProfiles: [
-      { platform: "facebook", link: "https://facebook.com/example" }, // Update with actual links
-      { platform: "instagram", link: "https://instagram.com/example" },
+      { platform: "facebook", link: "https://www.facebook.com/profile.php?id=61565075349768&mibextid=kFxxJD" }, // Update with actual links
+      { platform: "instagram", link: "https://www.instagram.com/drmadiha_s?igsh=MWs4M2tmMjY3azk2aw==" },
     ],
   },
   {
@@ -36,8 +36,8 @@ const specialists = [
     specialization: "Cosmetic Dentist & Prosthodontist",
     qualifications: ["BDS, MDS (Prostho) DUHS, C-Ortho, C-Implant"],
     socialProfiles: [
-      { platform: "facebook", link: "https://facebook.com/example" }, // Update with actual links
-      { platform: "instagram", link: "https://instagram.com/example" },
+      { platform: "facebook", link: "https://www.facebook.com/profile.php?id=100085876358218&mibextid=kFxxJD" }, // Update with actual links
+      { platform: "instagram", link: "https://www.instagram.com/dranam.dental?igsh=OXRzZ2plaXpxYXl0" },
     ],
   },
   {
@@ -45,11 +45,11 @@ const specialists = [
     names: "Dr Gulam Shabbir",
     specialization: "Plastic Surgeon",
     qualifications: [
-      "Consultant Professor MD, MRCPS (Glasgow), FCPS (Plastic Surgery)",
+      "MD, MRCPS (Glasgow), FCPS (Plastic Surgery)",
     ],
     socialProfiles: [
-      { platform: "facebook", link: "https://facebook.com/example" }, // Update with actual links
-      { platform: "instagram", link: "https://instagram.com/example" },
+      { platform: "facebook", link: "https://www.facebook.com/theallureclinics" }, // Update with actual links
+      { platform: "instagram", link: "https://www.instagram.com/allureclinics_?igsh=bG1lbjQ0cDVudHVj" },
     ],
   },
   {
@@ -61,8 +61,8 @@ const specialists = [
       "Professor & Incharge Dept. of Dermatology, Ziauddin University Karachi.",
     ],
     socialProfiles: [
-      { platform: "facebook", link: "https://facebook.com/example" }, // Update with actual links
-      { platform: "instagram", link: "https://instagram.com/example" },
+      { platform: "facebook", link: "https://www.facebook.com/theallureclinics" }, // Update with actual links
+      { platform: "instagram", link: "https://www.instagram.com/allureclinics_?igsh=bG1lbjQ0cDVudHVj" },
     ],
   },
   // Add more specialists as needed
@@ -106,6 +106,7 @@ const SpecialistCard = () => {
           centerSlidePercentage={slidePercentage} // Show 3 items per slide
           showThumbs={false}
           showStatus={false}
+          autoPlay={true}
           showIndicators={false}
           swipeable={true}
           emulateTouch={true}
@@ -171,6 +172,7 @@ const SpecialistCard = () => {
                   <SocialIcon
                     key={i}
                     url={profile.link}
+                    target="_blank"
                     style={{ height: 30, width: 30 }} // Customize the icon size
                     fgColor="#ffffff" // Icon color
                     bgColor="transparent"

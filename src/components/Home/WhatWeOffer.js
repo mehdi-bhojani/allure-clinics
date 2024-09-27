@@ -3,37 +3,38 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 import HorizontalCard from "./HorizontalCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import SkinServices from "../../shared/SkinServices.json"
 
 function WhatWeOffer() {
   const [slidePercentage, setSlidePercentage] = useState(33.33); // Default for desktop
 
-  const dummyData = [
-    {
-      link: "/services/hair-treatments",
-      img: "/Hair.gif",
-      title: "Hair Treatments",
-      description: "",
-    },
-    {
-      link: "/services/facial-treatments",
-      img: "/facial.gif",
-      title: "Facial Treatments",
-      description: "",
-    },
-    {
-      link: "/services/laser-treatments",
-      img: "/Laser treatment.gif",
-      title: "Laser Treatments",
-      description: "",
-    },
-    {
-      link: "/services/dental-treatments",
-      img: "/dental.gif",
-      title: "Dental Treatment",
-      description: "",
-    },
-    // Add more services if needed
-  ];
+  // const dummyData = [
+  //   {
+  //     link: "/services/hair-treatments",
+  //     img: "/Hair.gif",
+  //     title: "Hair Treatments",
+  //     description: "",
+  //   },
+  //   {
+  //     link: "/services/facial-treatments",
+  //     img: "/facial.gif",
+  //     title: "Facial Treatments",
+  //     description: "",
+  //   },
+  //   {
+  //     link: "/services/laser-treatments",
+  //     img: "/Laser treatment.gif",
+  //     title: "Laser Treatments",
+  //     description: "",
+  //   },
+  //   {
+  //     link: "/services/dental-treatments",
+  //     img: "/dental.gif",
+  //     title: "Dental Treatment",
+  //     description: "",
+  //   },
+  //   // Add more services if needed
+  // ];
 
   // Adjust slide width based on screen size
   useEffect(() => {
@@ -82,6 +83,7 @@ function WhatWeOffer() {
           showStatus={false}
           showIndicators={false}
           swipeable={true}
+          autoPlay={true}
           emulateTouch={true}
           renderArrowPrev={(onClickHandler, hasPrev, label) =>
             hasPrev && (
@@ -112,13 +114,13 @@ function WhatWeOffer() {
             )
           }
         >
-          {dummyData.map((data, index) => (
+          {SkinServices.map((data, index) => (
             <HorizontalCard
               key={index}
               link={data.link}
               img={data.img}
-              title={data.title}
-              description={data.description}
+              title={data.serviceType}
+              description={""}
             />
           ))}
         </Carousel>

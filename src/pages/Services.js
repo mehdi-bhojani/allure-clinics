@@ -8,7 +8,7 @@ import Footer from "../components/Home/Footer";
 const Services = () => {
   const { category } = useParams();
   // const router = use
-  console.log(category);
+  // console.log(category);
   const selectedService = theServices.find(
     (service) => service.type === category
   );
