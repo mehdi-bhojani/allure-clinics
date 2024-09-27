@@ -100,14 +100,14 @@ const Footer = () => {
               <ul className="text-xs flex gap-5">
                 <li className="mb-2">
                   <SocialIcon
-                    url="https://facebook.com/"
+                    url="https://www.facebook.com/theallureclinics"
                     bgColor={"transparent"}
                     className="border border-white rounded-lg p-0 "
                   />
                 </li>
                 <li className="mb-2">
                   <SocialIcon
-                    url="https://instagram.com/"
+                    url="https://www.instagram.com/allureclinics_?igsh=bG1lbjQ0cDVudHVj"
                     bgColor={"transparent"}
                     className="border border-white rounded-lg p-0 "
                   />

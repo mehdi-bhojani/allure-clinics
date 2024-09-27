@@ -149,6 +149,13 @@ function Section2() {
       <div>
         <Footer />
       </div>
+      <div className="fixed bottom-5 right-5 z-50">
+        <SocialIcon
+          url={`https://api.whatsapp.com/send?phone=923177770160&text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services%20at%20Allure%20Clinic.%20Could%20you%20please%20provide%20more%20information%20on%20the%20services%20you%20provide%20and%20available%20appointment%20slots%3F%20Thank%20you!`}
+          target="_blank"
+          style={{ height: 60, width: 60 }} // Customize the icon size
+        />
+      </div>
     </div>
   );
 }

@@ -23,7 +23,7 @@ const ServicePage = () => {
   
   // Example usage:
   const serviceData = findSubServiceByLink(serviceType);
-  console.log(serviceData);
+  // console.log(serviceData);
 
   const testimonials = [
     {
@@ -47,10 +47,10 @@ const ServicePage = () => {
   ];
 
   return (
-    <dic className={'w-full'}>
+    <div className={'w-full'}>
       <NavBar />
       <ServiceDetail service={serviceData} testimonials={testimonials} />
-    </dic>
+    </div>
   );
 };
 
