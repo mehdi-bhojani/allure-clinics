@@ -1,12 +1,14 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function HorizontalCard(props) {
   return (
     <div>
       <div className="max-w-sm bg-[#AE9D95] rounded-lg shadow-lg w-full md:w-72 bg-opacity-[58%] md:mx-4 md:h-[100%]">
         <Link to={props.link}>
-          <img className="rounded-t-lg h-[300px] object-cover" src={props.img} alt={props.title} />
+          <LazyLoadImage className="rounded-t-lg h-[300px] object-cover" src={props.img} alt={props.title} effect="blur"/>
         </Link>
         <div className="p-5">
           <Link to={props.link}>

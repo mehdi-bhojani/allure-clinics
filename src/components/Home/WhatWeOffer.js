@@ -8,34 +8,6 @@ import SkinServices from "../../shared/SkinServices.json"
 function WhatWeOffer() {
   const [slidePercentage, setSlidePercentage] = useState(33.33); // Default for desktop
 
-  // const dummyData = [
-  //   {
-  //     link: "/services/hair-treatments",
-  //     img: "/Hair.gif",
-  //     title: "Hair Treatments",
-  //     description: "",
-  //   },
-  //   {
-  //     link: "/services/facial-treatments",
-  //     img: "/facial.gif",
-  //     title: "Facial Treatments",
-  //     description: "",
-  //   },
-  //   {
-  //     link: "/services/laser-treatments",
-  //     img: "/Laser treatment.gif",
-  //     title: "Laser Treatments",
-  //     description: "",
-  //   },
-  //   {
-  //     link: "/services/dental-treatments",
-  //     img: "/dental.gif",
-  //     title: "Dental Treatment",
-  //     description: "",
-  //   },
-  //   // Add more services if needed
-  // ];
-
   // Adjust slide width based on screen size
   useEffect(() => {
     const handleResize = () => {

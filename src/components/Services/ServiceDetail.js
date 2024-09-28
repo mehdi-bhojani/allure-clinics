@@ -2,10 +2,11 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 import Testimonials from "../Home/TestimonialSlider";
 import Footer from "../Home/Footer";
-import { HashLink } from 'react-router-hash-link';
-// import SkinService from '../../shared/SkinServices.json'
+import { HashLink } from "react-router-hash-link";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-const ServiceDetail = ({ service, testimonials }) => {
+const ServiceDetail = ({ service }) => {
   return (
     <div
       className="pt-12 bg-[#9E8E86] w-full"
@@ -17,10 +18,12 @@ const ServiceDetail = ({ service, testimonials }) => {
       {/* Service Info Section */}
       <div className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-10 md:px-12 md:py-24 ">
         {/* Service Image */}
-        <img
+        <LazyLoadImage
           src={service.img}
+          effect="blur"
           alt={service.title}
-          className="w-full md:w-1/2 rounded-lg shadow-md my-6"
+          width={'100%'}
+          className="w-full md:min-w-1/2 max-h-[500px] object-cover object-center rounded-lg shadow-md my-6"
         />
 
         {/* Service Details */}

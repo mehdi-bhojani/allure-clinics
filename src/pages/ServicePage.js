@@ -1,55 +1,73 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ServiceDetail from '../components/Services/ServiceDetail';
 import NavBar from '../components/Navbar/NavBar';
 import { useParams } from 'react-router-dom';
 import theServices from '../shared/SkinServices.json';
+import ImageLoading from '../components/loading/imageLoading';
 // import Footer from '../components/Footer';
 
 const ServicePage = () => {
-  const {serviceType} = useParams();
-  // console.log(serviceType);
-  function findSubServiceByLink(link) {
-    // Loop through each service
-    for (const service of theServices) {
-      // Loop through each sub-service
-      for (const subService of service.subServices) {
-        if (subService.link.includes(link)) {
-          return subService; // Return the matched sub-service
+  const { serviceType } = useParams();
+  const [serviceData, setServiceData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const findSubServiceByLink = (link) => {
+      for (const service of theServices) {
+        for (const subService of service.subServices) {
+          if (subService.link.includes(link)) {
+            return subService;
+          }
         }
       }
-    }
-    return null; // Return null if no sub-service is found
-  }
-  
-  // Example usage:
-  const serviceData = findSubServiceByLink(serviceType);
-  // console.log(serviceData);
+      return null;
+    };
 
-  const testimonials = [
-    {
-      name: "Muhammad Asif",
-      testimonial:
-        "I have just had a hair transplant done at this clinic in Mid Jan 2023. Very hServicePagey with the results so far. I have found Dr. Saqib to be a very competent and professional surgeon. Charges are very reasonable and a good level of hygiene standards maintained.",
-      avatar: "/placeholder-men.png", // Placeholder avatar URL
-    },
-    {
-      name: "Ayesha Khan",
-      testimonial:
-        "The clinic was amazing! The staff was friendly, and the service was top-notch. I got exactly what I wanted and more. Highly recommended.",
-      avatar: "/placeholder-women.png", // Placeholder avatar URL
-    },
-    {
-      name: "Ali Raza",
-      testimonial:
-        "Dr. Saqib and his team are the best. The procedure was smooth, and I couldn’t be hServicePageier with the results. My skin looks and feels amazing.",
-      avatar: "/placeholder-men.png", // Placeholder avatar URL
-    },
-  ];
+    const fetchServiceData = () => {
+      setLoading(true);
+      try {
+        const data = findSubServiceByLink(serviceType);
+        if (data) {
+          setServiceData(data);
+        } else {
+          setError('Service not found');
+        }
+      } catch (err) {
+        setError('An error occurred while fetching service data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchServiceData();
+  }, [serviceType]);
+
+  if (loading) {
+    return (
+      <div className="w-full">
+        <div><ImageLoading /> </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-full">
+        <NavBar />
+        <div>Error: {error}</div>
+      </div>
+    );
+  }
 
   return (
-    <div className={'w-full'}>
+    <div className="w-full">
       <NavBar />
-      <ServiceDetail service={serviceData} testimonials={testimonials} />
+      {serviceData ? (
+        <ServiceDetail service={serviceData} />
+      ) : (
+        <div>No service data available</div>
+      )}
     </div>
   );
 };

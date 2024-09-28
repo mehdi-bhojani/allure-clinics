@@ -1,28 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ServiceCard from "../components/Services/ServiceCard";
 import theServices from "../shared/SkinServices.json";
 import NavBar from "../components/Navbar/NavBar";
 import Footer from "../components/Home/Footer";
+import ImageLoading from "../components/loading/imageLoading";
 
 const Services = () => {
   const { category } = useParams();
-  // const router = use
-  // console.log(category);
-  const selectedService = theServices.find(
-    (service) => service.type === category
-  );
+  const [selectedService, setSelectedService] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const findServices = () => {
+      const selectedService = theServices.find(
+        (service) => service.type === category
+      );
+      setLoading(false);
+      return selectedService;
+    }
+    setSelectedService(findServices());
+  }, [category]);
   // If no category matches, return a message or redirect
-  if (!selectedService) {
+  if (loading) {
     return (
       <>
-        <NavBar />
-        <div className="p-12 mt-20 text-center">
-          <h2>No services found for the selected category.</h2>
+        <div >
+          <ImageLoading />
         </div>
       </>
     );
   }
+    
   const { subServices } = selectedService;
   return (
     <>

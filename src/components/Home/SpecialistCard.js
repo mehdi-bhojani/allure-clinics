@@ -3,7 +3,8 @@ import { SocialIcon } from "react-social-icons";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 const specialists = [
   {
     image: "/specialist1.jpg", // Replace with the actual image URL
@@ -14,8 +15,14 @@ const specialists = [
       "Professional Diploma in Facial Aesthetic & Medicine from Canadian Academy of Aesthetic Medicine",
     ],
     socialProfiles: [
-      { platform: "facebook", link: "https://www.facebook.com/Dr.AzamVirk?mibextid=kFxxJD" }, // Update with actual links
-      { platform: "instagram", link: "https://www.instagram.com/dr.azam_virk?igsh=MWgxaHZodTZmdGx4Mg==" },
+      {
+        platform: "facebook",
+        link: "https://www.facebook.com/Dr.AzamVirk?mibextid=kFxxJD",
+      }, // Update with actual links
+      {
+        platform: "instagram",
+        link: "https://www.instagram.com/dr.azam_virk?igsh=MWgxaHZodTZmdGx4Mg==",
+      },
     ],
   },
   {
@@ -26,8 +33,14 @@ const specialists = [
       "BDS (DUHS), Certified Facial Aesthetics CPD (UK), Professional Diploma in Facial Aesthetics AACME",
     ],
     socialProfiles: [
-      { platform: "facebook", link: "https://www.facebook.com/profile.php?id=61565075349768&mibextid=kFxxJD" }, // Update with actual links
-      { platform: "instagram", link: "https://www.instagram.com/drmadiha_s?igsh=MWs4M2tmMjY3azk2aw==" },
+      {
+        platform: "facebook",
+        link: "https://www.facebook.com/profile.php?id=61565075349768&mibextid=kFxxJD",
+      }, // Update with actual links
+      {
+        platform: "instagram",
+        link: "https://www.instagram.com/drmadiha_s?igsh=MWs4M2tmMjY3azk2aw==",
+      },
     ],
   },
   {
@@ -36,20 +49,30 @@ const specialists = [
     specialization: "Cosmetic Dentist & Prosthodontist",
     qualifications: ["BDS, MDS (Prostho) DUHS, C-Ortho, C-Implant"],
     socialProfiles: [
-      { platform: "facebook", link: "https://www.facebook.com/profile.php?id=100085876358218&mibextid=kFxxJD" }, // Update with actual links
-      { platform: "instagram", link: "https://www.instagram.com/dranam.dental?igsh=OXRzZ2plaXpxYXl0" },
+      {
+        platform: "facebook",
+        link: "https://www.facebook.com/profile.php?id=100085876358218&mibextid=kFxxJD",
+      }, // Update with actual links
+      {
+        platform: "instagram",
+        link: "https://www.instagram.com/dranam.dental?igsh=OXRzZ2plaXpxYXl0",
+      },
     ],
   },
   {
     image: "/specialist4.jpg",
     names: "Dr Gulam Shabbir",
     specialization: "Plastic Surgeon",
-    qualifications: [
-      "MD, MRCPS (Glasgow), FCPS (Plastic Surgery)",
-    ],
+    qualifications: ["MD, MRCPS (Glasgow), FCPS (Plastic Surgery)"],
     socialProfiles: [
-      { platform: "facebook", link: "https://www.facebook.com/theallureclinics" }, // Update with actual links
-      { platform: "instagram", link: "https://www.instagram.com/allureclinics_?igsh=bG1lbjQ0cDVudHVj" },
+      {
+        platform: "facebook",
+        link: "https://www.facebook.com/theallureclinics",
+      }, // Update with actual links
+      {
+        platform: "instagram",
+        link: "https://www.instagram.com/allureclinics_?igsh=bG1lbjQ0cDVudHVj",
+      },
     ],
   },
   {
@@ -61,8 +84,14 @@ const specialists = [
       "Professor & Incharge Dept. of Dermatology, Ziauddin University Karachi.",
     ],
     socialProfiles: [
-      { platform: "facebook", link: "https://www.facebook.com/theallureclinics" }, // Update with actual links
-      { platform: "instagram", link: "https://www.instagram.com/allureclinics_?igsh=bG1lbjQ0cDVudHVj" },
+      {
+        platform: "facebook",
+        link: "https://www.facebook.com/theallureclinics",
+      }, // Update with actual links
+      {
+        platform: "instagram",
+        link: "https://www.instagram.com/allureclinics_?igsh=bG1lbjQ0cDVudHVj",
+      },
     ],
   },
   // Add more specialists as needed
@@ -75,11 +104,9 @@ const SpecialistCard = () => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setSlidePercentage(100); // Mobile: full width
-      } else if(window.innerWidth < 1024){
+      } else if (window.innerWidth < 1024) {
         setSlidePercentage(50); // Tablet: 1/2 of the width
-      } 
-      
-      else {
+      } else {
         setSlidePercentage(33.33); // Desktop: 1/3 of the width
       }
     };
@@ -96,7 +123,10 @@ const SpecialistCard = () => {
     };
   }, []);
   return (
-    <div className="text-center p-5 md:p-12 relative specialists" id={'specialists'}>
+    <div
+      className="text-center p-5 md:p-12 relative specialists"
+      id={"specialists"}
+    >
       <h2 className="text-4xl text-[#E3B25A] mb-8">Our Specialist</h2>
       <div className="max-w-5xl mx-auto">
         <Carousel
@@ -144,11 +174,12 @@ const SpecialistCard = () => {
               className="bg-[#231F20] rounded-lg p-4 shadow-lg w-full md:w-72 bg-opacity-[58%] md:mx-4 h-[100%] flex flex-col justify-around"
             >
               <div className="specialists-img flex justify-center mb-4">
-                <img
+                <LazyLoadImage
+                effect="blur"
                   src={specialist.image}
                   alt={`Specialist ${index + 1}`}
-                  width={500}
-                  height={500}
+                  // width={'500px'}
+                  // height={'500px'}
                   className="object-cover object-top rounded-full"
                 />
               </div>

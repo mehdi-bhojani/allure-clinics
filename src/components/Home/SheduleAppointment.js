@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 const SheduleAppointment = () => {
   const form = useRef();
 
@@ -97,7 +98,8 @@ const SheduleAppointment = () => {
             </div>
           </form>
           <div className="w-1/2 flex-1 max-h-[500px] overflow-hidden hidden md:block">
-            <img
+            <LazyLoadImage
+            effect="blur"
               src="/appointment.png"
               alt="appointment"
               className="object-cover object-center min-h-screen md:min-h-fit"
