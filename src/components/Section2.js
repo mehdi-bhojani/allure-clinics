@@ -5,7 +5,7 @@ import SheduleAppointment from "./Home/SheduleAppointment";
 import SpecialistCard from "./Home/SpecialistCard";
 import TestimonialSlider from "./Home/TestimonialSlider";
 import Footer from "./Home/Footer";
-import { MapPin, Share2 } from "lucide-react";
+import { MapPin, Phone, Share2 } from "lucide-react";
 import { SocialIcon } from "react-social-icons";
 import FAQAccordion from "./Home/FAQAccordion";
 
@@ -75,6 +75,12 @@ function Section2() {
             </div>
             1st Floor, Ittehad Tower 1-C, Main Khayaban-e-Ittehad road, Corner
             of Bukhari Commercial Lane 05, DHA Phase 6 Karachi.
+            <p className="flex gap-4 items-center">
+            <Phone className="w-10 h-10 p-2 rounded-lg bg-primary " />
+            <a href="tel:+923177770160" className="text-white underline">
+              0317-7770160
+            </a>
+            </p>
           </div>
           <span className="mt-8 flex gap-1 items-center text-white">
             {" "}

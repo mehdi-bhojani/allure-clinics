@@ -37,6 +37,7 @@ const VideoFrame = ({ url }) => {
           loop={true}     // Loop video
           onError={handleError}
           onReady={handleReady}
+          playsinline={true}
         />
       </div>
     </div>

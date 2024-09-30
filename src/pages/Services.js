@@ -5,6 +5,7 @@ import theServices from "../shared/SkinServices.json";
 import NavBar from "../components/Navbar/NavBar";
 import Footer from "../components/Home/Footer";
 import ImageLoading from "../components/loading/imageLoading";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Services = () => {
   const { category } = useParams();
@@ -37,7 +38,7 @@ const Services = () => {
     <>
       <NavBar />
       <div>
-        <img src={selectedService.hero} alt={selectedService.type} className="w-full lg:h-screen"/>
+        <LazyLoadImage effect="blur" src={selectedService.hero} alt={selectedService.type} className="w-full lg:h-screen"/>
       </div>
       <div className="p-5 md:p-12  max-w-7xl mx-auto">
       <div className="p-5 my-8">

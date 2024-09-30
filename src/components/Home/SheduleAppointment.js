@@ -1,10 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import ImageLoading from "../loading/imageLoading";
+// Your custom loading component
+
 const SheduleAppointment = () => {
   const form = useRef();
+  const [imageLoading, setImageLoading] = useState(true); // Track image loading state
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -18,20 +22,23 @@ const SheduleAppointment = () => {
       )
       .then(
         (result) => {
-          // console.log(result.text);
           toast.success("Request sent successfully!");
           form.current.reset();
         },
         (error) => {
-          // console.log(error.text);
           toast.error("Failed to send request");
         }
       );
   };
 
+  // Function to handle when the image has fully loaded
+  const handleImageLoad = () => {
+    setImageLoading(false);
+  };
+
   return (
     <div className="p-5 md:p-24 z-10" id="book">
-      <div className=" w-full">
+      <div className="w-full">
         <h2 className="text-4xl text-primary mb-8 text-center md:text-left">
           Schedule an Appointment
         </h2>
@@ -41,7 +48,6 @@ const SheduleAppointment = () => {
             onSubmit={sendEmail}
             className="h-auto w-full md:w-1/2 flex flex-col justify-between"
           >
-            {/* Use a flex container with 'space-y-4' for consistent spacing */}
             <div className="flex flex-1 flex-col justify-between h-full space-y-4">
               <div className="flex flex-grow">
                 <input
@@ -97,12 +103,18 @@ const SheduleAppointment = () => {
               </div>
             </div>
           </form>
-          <div className="w-1/2 flex-1 max-h-[500px] overflow-hidden hidden md:block">
+          <div className="w-1/2 flex-1 max-h-[500px] overflow-hidden hidden md:block relative">
+            {imageLoading && (
+              <div className="absolute inset-0 flex justify-center items-center">
+                <ImageLoading /> {/* Show loading spinner while image is loading */}
+              </div>
+            )}
             <LazyLoadImage
-            effect="blur"
               src="/appointment.png"
               alt="appointment"
               className="object-cover object-center min-h-screen md:min-h-fit"
+              effect="blur"
+              onLoad={handleImageLoad} // Callback when image finishes loading
             />
           </div>
         </div>
